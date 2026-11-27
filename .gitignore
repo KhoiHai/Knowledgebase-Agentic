@@ -1,0 +1,6 @@
+__pycache__
+.env
+venv/
+.vscode/
+frontend/dist/
+frontend/node_modules

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Bảng màu & token dùng chung — đổi màu chủ đạo chỉ cần sửa ở đây */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+
+  --color-brand-50: #fff4ef;
+  --color-brand-100: #ffe6db;
+  --color-brand-200: #ffc9b3;
+  --color-brand-300: #ffa585;
+  --color-brand-400: #f98258;
+  --color-brand-500: #ee6a3c;
+  --color-brand-600: #db5228;
+  --color-brand-700: #b5401e;
+
+  --color-canvas: #e9e9eb;
+  --color-surface: #f6f6f7;
+  --color-ink: #17171c;
+  --color-muted: #8c8c96;
+
+  --shadow-soft: 0 12px 32px -14px rgb(23 23 28 / 0.18);
+  --shadow-glow: 0 10px 28px -6px rgb(238 106 60 / 0.65);
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+}
+
+/* 3 chấm "đang trả lời" */
+@keyframes dot {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-4px); }
+}
+.typing-dot { animation: dot 1.2s infinite ease-in-out; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-rise { animation: rise 0.3s ease-out both; }
+
+/* Chỉ mờ dần, không dịch chuyển → không làm nội dung tràn ra gây thanh cuộn */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade { animation: fade 0.4s ease-out both; }
